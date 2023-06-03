@@ -1,0 +1,743 @@
+/*》》external assets and fonts import《《*/
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@400;500;600;700;900&family=Poppins:wght@400;500;600;700;900&display=swap');
+
+/*》》》》》Css Reset and variable《《《《《*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,html{
+  font-size: 62.5%;
+  text-transform: capitalize;
+  font-family: Helvetica, Arial, sans-serif;
+}
+:root{
+  --mainBg: #02ff56;
+  --poppin: 'Poppins', sans-serif;
+  --para: 'Lato', sans-serif;
+  --mont: 'Montserrat', sans-serif;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+::selection{
+  background: var(--mainBg);
+  color: #000;
+}
+.heading{
+  font-size: 2.5rem;
+  font-weight: var(--poppin);
+  position: relative;
+  font-weight: 600;
+  padding: 1rem 0;
+  line-height: 1.5rem;
+  display: inline-block;
+}
+.heading::before{
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: -0.2rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--mainBg);
+}
+.heading::after{
+  content: "";
+  position: absolute;
+  bottom: -0.2rem;
+  left: 0.2rem;
+  width: 7rem;
+  height: 0.5rem;
+  border-radius: 5rem;
+  background: var(--mainBg);
+}
+#loader .preloader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#loader .ball{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--mainBg);
+  box-shadow: 0 0 0.4rem #AFAFAF;
+  animation: bounce 1s infinite ease-in-out;
+}
+@keyframes bounce{
+  0%{
+    transform: translateY(0rem);
+  }
+  50%{
+    transform: translateY(-6rem);
+  }
+  100%{
+    transform: translateY(0rem);
+  }
+}
+#loader{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#loader .box{
+  width: 4rem;
+  height: 4rem;
+  background: var(--mainBg);
+  box-shadow: 0 0 0.4rem #AFAFAF;
+  opacity: 1;
+  z-index: 9999999999;
+  transition: all 0.5s linear;
+}
+#loader .animate-box{
+  transition: all 0.5s linear;
+  animation: rotate 2s infinite ease-in-out;
+}
+@keyframes rotate{
+  0%{
+    transform: rotate(0deg);
+  }
+  25%{
+    transform: rotate(90deg);
+  }
+  50%{
+    transform: rotate(180deg);
+  }
+  75%{
+    transform: rotate(270deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+#loader .preloader > span{
+  margin-top: 5.5rem;
+  font-size: 1.4rem;
+  font-family: var(--poppin);
+}
+
+
+/*》》》》Header Section《《《《*/
+#container #header{
+  background: var(--mainBg);
+  padding: 1rem 2rem 1.7rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 45;
+}
+#container #header .left a > img{
+  width: 19rem;
+  filter: brightness(0) invert(0);
+  cursor: pointer;
+}
+#container #header .right{
+  position: absolute;
+  top: 8.5vh;
+  right: 1rem;
+  display: flex;
+  background: #fff;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  width: 20%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  gap: 0.2rem;
+  box-shadow: 0 0.2rem 0.5rem #D0D0D0;
+  font-family: var(--mont);
+  transition: all 0.5s ease-in-out;
+}
+#container #header .right .menu-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-family: var(--poppin);
+  background: #000;
+  color: var(--mainBg);
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+#container #header .right .menu-icon #menu-arrow{
+  font-size: 1.5rem;
+  margin-right: 0.4rem;
+  transition: all 0.5s ease-in-out;
+}
+#container #header .right .menu-items{
+  display: flex;
+  opacity: 0;
+  align-items: center;
+  justify-content: space-around;
+  width: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+#container #header .right .menu-items a{
+  color: #000;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  color: #000;
+}
+#container #header .right .menu-items a:hover{
+  color: var(--mainBg);
+  background: #000;
+}
+#container #header .right .menu-items a:nth-child(1){
+  color: var(--mainBg);
+  background: #000;
+}
+#container #header .width{
+  width: 95%;
+}
+#container #header .toggle .width{
+  width: 100%;
+  opacity: 1;
+}
+#container #header .toggle .menu-icon .rotate{
+  transform: rotate(180deg);
+}
+
+/*》》》》Hero Section《《《《*/
+#container #hero{
+  width: 100vw;
+  height: 40rem;
+  position: relative;
+  overflow: hidden;
+}
+
+#container #hero .left-hero-section{
+  font-family: var(--poppin);
+  margin-top: 2rem;
+  position: absolute;
+  top: 0.2rem;
+  left: 1rem;
+  z-index: 3;
+  transition: all 0.4s linear;
+}
+#hero .left-hero-section h1{
+  font-size: 2.3rem;
+  font-weight: 600;
+  line-height: 3rem;
+  margin: 0.5rem 0;
+  width: 30rem;
+}
+#hero .left-hero-section h1:first-letter{
+  initial-letter: 2;
+  font-weight: 600;
+  color: #019D35;
+  font-family: cursive, Arial, Helvetica, sans-serif;
+}
+#hero #change-txt{
+  font-size: 1.8rem;
+  display: inline-block;
+  font-weight: 500;
+  color: var(--mainBg);
+  position: relative;
+}
+#hero #change-txt::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -4rem;
+  background: #000;
+  width: 140%;
+  height: 100%;
+  height: 2.4ch;
+  border-radius: 10rem;
+  z-index: -1;
+}
+#hero #bio{
+  width: 55%;
+  font-size: 1.2rem;
+  text-align: justify;
+  color: grey;
+  font-family: var(--para);
+}
+#container #hero .right-hero-section{
+  background-image: url("../assets/heroSection/1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 58%;
+  height: 75%;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: -2rem;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+#container #hero .right-hero-section:hover{
+  background-image: url("../assets/heroSection/2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#container #hero::before{
+  content: "";
+  position: absolute;
+  bottom: -10rem;
+  right: -10rem;
+  width: 30rem;
+  height: 30rem;
+  background: var(--mainBg);
+  border-radius: 50%;
+  z-index: -1;
+  box-shadow: 0 0 0.5rem var(--mainBg);
+}
+#container #hero .left-hero-section .buttons a{
+  display: inline-block;
+  padding: 0.8rem 1rem;
+  margin: 1rem 0.5rem 0 0;
+  font-size: 1.2rem;
+  border-radius: 0.4rem;
+  color: #000;
+  border: 0.1rem solid var(--mainBg);
+  box-shadow: 0 0 0.5rem #E8E8E8;
+  font-weight: 500;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+
+#container #hero .left-hero-section .buttons #hire-btn{
+  background: var(--mainBg);
+}
+
+#container #hero .left-hero-section .buttons #hire-btn:hover{
+  background: #fff;
+  box-shadow: 0 0.8rem 1.5rem var(--mainBg);
+}
+#container #hero .left-hero-section .buttons #cv-btn:hover{
+  background: var(--mainBg);
+  box-shadow: 0 0.4rem 1.5rem var(--mainBg);
+}
+
+/*》》》》About Section《《《《*/
+#container #about{
+  background: #Fafafa;
+  padding: 2rem 1rem;
+}
+#container #about .header h3{
+  font-family: var(--poppin);
+  font-weight: 610;
+  font-size: 1.3rem;
+  line-height: 0;
+  background: #fff;
+  padding: 1.5rem 1rem 1.5rem 4rem;
+  margin-left: -4rem;
+  width: 11rem;
+  border-radius: 1rem;
+}
+#container #about .about-para{
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  font-family: var(--para);
+  color: #8C8C8C;
+  line-height: 2rem;
+}
+#container #about .about-info{
+  margin-top: 2.5rem;
+  font-size: 1.4rem;
+  display: grid;
+  gap: 1.2rem;
+  font-family: var(--poppin);
+}
+#container #about .about-info h3{
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+}
+#container #about .about-info h3 .answer{
+  font-weight: 400;
+  font-size: 1.35rem;
+  color: #8c8c8c;
+  width: 55vw;
+  font-family: var(--mont);
+}
+
+#container #about .hobbies{
+  margin: 2.5rem 0;
+  font-family: var(--mont);
+}
+#container #about .hobbies .row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+#container #about .hobbies .row .element{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 15rem;
+  padding: 0 0 0 2rem;
+  border-left: 0.2rem solid #8c8c8c;
+}
+#container #about .hobbies .row .element ion-icon{
+  font-size: 2rem;
+  background: var(--mainBg);
+  padding: 0.5rem;
+  line-height: 0;
+  box-shadow: 0 0 0 0.15rem #fff, 0 0 0 0.3rem var(--mainBg), 0 0 0.8rem 0 #000;
+  border-radius: 50%;
+}
+#container #about .hobbies .row .element h6{
+  width: 8rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+/*》》》》Services Section《《《《*/
+#container #services{
+  background: #fff;
+  padding: 5rem 1rem;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  gap: 5rem;
+}
+#container #services .info h2{
+  font-size: 2.5rem;
+  font-family: var(--poppin);
+  font-weight: 610;
+}
+#container #services .service-info ion-icon{
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: var(--mainBg);
+  padding: 1.2rem;
+  border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;
+  position: relative;
+  box-shadow: 0 0 1rem var(--mainBg);
+  animation: wave 5s infinite ease-in-out;
+}
+#container #services .service-info ion-icon::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: transparent;
+  border: 0.2rem solid #fff;
+  width: 4rem;
+  height: 4rem;
+  border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: wave 4.7s infinite ease-in-out;
+}
+@keyframes wave{
+  0%{
+      border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+    25%{ 
+      border-radius:58% 42% 75% 25% / 76% 46% 54% 24%;
+    }
+    50%{
+      border-radius:50% 50% 33% 67% / 55% 27% 73% 45%;
+    }
+    75%{
+      border-radius:33% 67% 58% 42% / 63% 68% 32% 37%;
+    }
+    100%{
+      border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+}
+#container #services p{
+  font-size: 1.15rem;
+  font-family: var(--poppin);
+  color: #8c8c8c;
+  width: 30rem;
+  line-height: 1.7rem;
+  margin-top: 0.3rem;
+}
+#container #services .service-info h3{
+  font-size: 1.6rem;
+  font-family: var(--poppin);
+  font-weight: 500;
+}
+#container #services .service-info{
+  display: grid;
+  gap: 4rem;
+}
+
+/*》》》》Skills Section《《《《*/
+#container #skills{
+  background: #fafafa;
+  padding: 3rem 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4rem;
+}
+#container #skills p{
+  color: #8c8c8c;
+  font-size: var(--poppin);
+  font-size: 1.2rem;
+  text-align: left;
+  width: 28rem;
+  margin-top: 0.5rem;
+}
+#container #skills .first-sec{
+  text-align: center;
+}
+#container #skills .first-sec h2{
+  font-size: 2.5rem;
+  font-family: var(--poppin);
+  color: #000;
+  font-weight: 610;
+}
+#container #skills .mid-sec{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+}
+#container #skills .mid-sec .element{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100vw;
+}
+#container #skills .mid-sec .element ion-icon{
+  font-size: 3rem;
+  background: var(--mainBg);
+  padding: 1.3rem;
+  border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;
+  box-shadow: 0 0 1rem var(--mainBg);
+  position: relative;
+  animation: wave 5s infinite linear;
+}
+#container #skills .mid-sec .element ion-icon::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 4.5rem;
+  height: 4.5rem;
+  background: transparent;
+  border: 0.2rem solid #fff;
+  border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: wave 4.7s infinite linear;
+}
+#container #skills .mid-sec .element div h3{
+  font-size: 1.5rem;
+  font-family: var(--mont);
+}
+
+#container #skills .last-sec{
+  padding: 1rem;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-family: var(--poppin);
+}
+#container #skills .last-sec div{
+  width: 100%;
+}
+#container #skills .last-sec div p{
+  text-align: right;
+  width: 100%;
+  color: #000;
+  background: #D1D1D1;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.3rem;
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 0 0.5rem #bdbdbd;
+}
+
+#container #skills .last-sec div p::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  border-radius: 0.3rem 0 0 0.3rem;
+  font-size: 1.1rem;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  text-transform: uppercase;
+}
+#container #skills .last-sec div p::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 60%;
+  height: 100%;
+  border-radius: 0 0.3rem 0.3rem 0;
+  display: grid;
+  place-items: center;
+  text-transform: uppercase;
+}
+
+#container #skills .last-sec .html p::before{
+  content: "html5";
+  background: #D56F05;
+}
+#container #skills .last-sec .html p::after{
+  width: 45%;
+  background: #FF8303;
+}
+
+#container #skills .last-sec .css p::before{
+  content: "css3";
+  background: #004EAB;
+}
+#container #skills .last-sec .css p::after{
+  width: 55%;
+  background: #0376FF;
+}
+
+#container #skills .last-sec .js p::before{
+  content: "javascript";
+  background: #012741;
+}
+#container #skills .last-sec .js p::after{
+  width: 60%;
+  background: #004F86;
+}
+
+#container #skills .last-sec .php p::before{
+  content: "php";
+  background: #230246;
+}
+#container #skills .last-sec .php p::after{
+  width: 35%;
+  background: #3C0278;
+}
+
+#container #skills .last-sec .java p::before{
+  content: "java";
+  background: #766602;
+}
+#container #skills .last-sec .java p::after{
+  width: 42%;
+  background: #DBBF06;
+}
+
+#container #skills .last-sec .c p::before{
+  content: "c/c++";
+  background: #15048F;
+}
+#container #skills .last-sec .c p::after{
+  width: 50%;
+  background: #2608FD;
+}
+#container #skills .last-sec .python p::before{
+  content: "python";
+  background: #026501;
+}
+#container #skills .last-sec .python p::after{
+  width: 67%;
+  background: #04C203;
+  z-index: -1;
+}
+
+#container #skills .last-sec .wordpress p::before{
+  content: "wordpress";
+  background: #002E81;
+}
+#container #skills .last-sec .wordpress p::after{
+  width: 33%;
+  background: #0044BC;
+}
+
+#container #skills .last-sec .photoshop p::before{
+  content: "photoshop";
+  background: #2F394C;
+}
+#container #skills .last-sec .photoshop p::after{
+  width: 25%;
+  background: #4C6692;
+}
+
+#container #skills .last-sec .figma p::before{
+  content: "figma";
+  background: #8B1C02;
+}
+#container #skills .last-sec .figma p::after{
+  width: 45%;
+  background: #D22B04;
+}
+
+#container #skills .last-sec .seo p::before{
+  content: "seo";
+  background: #3E8B02;
+}
+#container #skills .last-sec .seo p::after{
+  width: 48%;
+  background: #5DD400;
+}
+
+/*》》》》Counter Section《《《《*/
+#container #counter{
+  background: linear-gradient(45deg,#02ff56,#4DCF78);
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;;
+  align-items: center;
+  gap: 2rem;
+  z-index: 3;
+  position: relative;
+}
+#container #counter .row{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  text-align: center;
+}
+#container #counter::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.1;
+  z-index: -1;
+}
+#container #counter .row .element{
+  width: 100%;
+  font-family: var(--mont);
+  color: #fff;
+  font-size: 1.2rem;
+}
+#container #counter .row .element h3{
+  font-size: 2rem;
+}
